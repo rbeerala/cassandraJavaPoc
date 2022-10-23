@@ -34,9 +34,3 @@
 * Run the below command to stop docker containers
 
 `sudo docker-compose down`
-
-
----
-
-### Sample Recording
-https://user-images.githubusercontent.com/69693621/155093296-70b32908-5317-4ff0-bc34-f79222876926.mov

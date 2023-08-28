@@ -9,11 +9,12 @@ public class CassandraClusterConnector {
     private Session session;
 
     public void connect(String node, Integer port) {
-        Cluster.Builder b = Cluster.builder().addContactPoint(node);
+        Cluster.Builder clusterBuilder = Cluster.builder().addContactPoint(node);
+        clusterBuilder.withCredentials("cassandra", "cassandra");
         if (port != null) {
-            b.withPort(port);
+            clusterBuilder.withPort(port);
         }
-        cluster = b.build();
+        cluster = clusterBuilder.build();
 
         session = cluster.connect();
     }
